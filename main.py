@@ -2,9 +2,27 @@ from joueur import Joueur, afficher_joueurs
 from tournoi import Tournoi, creer_tournoi
 from matchs import generer_matchs, afficher_matchs, entrer_scores
 from classement import afficher_classement
+from auth import creer_compte, se_connecter, modifier_profil, supprimer_compte
 
 liste_joueurs = []
 liste_tournois = []
+utilisateur_connecte = None
+
+while not utilisateur_connecte:
+    print("\n ==  AUTHENTIFICATION  ==")
+    print("1. Se connecter")
+    print("2. Créer un compte")
+
+    choix=int(input("Votre choix :"))
+
+    if choix == "1":
+        se_connecter()
+    elif choix == "2":
+        creer_compte()
+    elif choix == "3":
+        exit()
+    else:
+        print("Choix invalide, réessayez.")
 
 while True:
     print("\n=== SmartSport ===")
