@@ -33,7 +33,9 @@ while True:
     print("5. Voir matchs")
     print("6. Entrer scores")
     print("7. Classement")
-    print("8. Quitter")
+    print("8. Modifier profil")
+    print("9. Supprimer compte")
+    print("10. Quitter")
     
     choix = input("Votre choix : ")
     
