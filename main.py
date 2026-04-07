@@ -12,11 +12,12 @@ while not utilisateur_connecte:
     print("\n ==  AUTHENTIFICATION  ==")
     print("1. Se connecter")
     print("2. Créer un compte")
+    print("3. Quitter")
 
     choix=int(input("Votre choix :"))
 
     if choix == "1":
-        se_connecter()
+        utilisateur_connecte = se_connecter()
     elif choix == "2":
         creer_compte()
     elif choix == "3":
@@ -71,7 +72,11 @@ while True:
     elif choix == "7":
         afficher_classement(liste_joueurs)
     elif choix == "8":
-        print("Au revoir !")
+        modifier_profil(utilisateur_connecte)
+    elif choix == "9":
+        supprimer_compte(utilisateur_connecte)
+    elif choix == "10":
+        print("À bientot !")
         break
     else:
         print("Choix invalide, réessayez.")
