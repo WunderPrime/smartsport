@@ -26,6 +26,7 @@ def creer_compte():
         return
     
     password = input("Mot de passe : ")
+    print(hash(password))
     
     users[username] = {
         "password": password
@@ -41,6 +42,7 @@ def se_connecter():
     
     username = input("Nom d'utilisateur : ")
     password = input("Mot de passe : ")
+    print(hash(password))
     
     if username in users and users[username]["password"] == password:
         print("Connexion réussie.")
@@ -60,6 +62,7 @@ def modifier_profil(username):
     
     new_password = input("Nouveau mot de passe : ")
     users[username]["password"] = new_password
+    print(hash(new_password))
     
     sauvegarder_utilisateurs(users)
     print("Mot de passe modifié.")

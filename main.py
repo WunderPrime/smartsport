@@ -14,7 +14,7 @@ while not utilisateur_connecte:
     print("2. Créer un compte")
     print("3. Quitter")
 
-    choix=int(input("Votre choix :"))
+    choix=input("Votre choix :")
 
     if choix == "1":
         utilisateur_connecte = se_connecter()
