@@ -67,9 +67,6 @@ SmartSport/
 │   ├── register.html    # Page d’inscription
 │   ├── dashboard.html   # Tableau de bord utilisateur
 │
-├── static/              # (optionnel mais recommandé)
-│   ├── style.css        # Design du site
-│   ├── script.js        # JavaScript (si besoin)
 │
 └── README.md            # Documentation du projet
 ```
