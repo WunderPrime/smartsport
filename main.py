@@ -14,7 +14,7 @@ while not utilisateur_connecte:
     print("2. Créer un compte")
     print("3. Quitter")
 
-    choix=input("Votre choix :")
+    choix = input("Votre choix :")
 
     if choix == "1":
         utilisateur_connecte = se_connecter()
@@ -37,9 +37,9 @@ while True:
     print("8. Modifier profil")
     print("9. Supprimer compte")
     print("10. Quitter")
-    
+
     choix = input("Votre choix : ")
-    
+
     if choix == "1":
         nom = input("Nom du joueur : ")
         liste_joueurs.append(Joueur(nom))

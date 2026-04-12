@@ -6,6 +6,7 @@ class Joueur:
     def ajouter_points(self, points):
         self.score += points
 
+
 def afficher_joueurs(liste_joueurs):
     if not liste_joueurs:
         print("Aucun joueur enregistré.")

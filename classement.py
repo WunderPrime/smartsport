@@ -1,6 +1,7 @@
 def classement_joueurs(liste_joueurs):
     return sorted(liste_joueurs, key=lambda j: j.score, reverse=True)
 
+
 def afficher_classement(liste_joueurs):
     if not liste_joueurs:
         print("Pas de joueurs à classer.")

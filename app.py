@@ -9,17 +9,21 @@ FICHIER = "users.json"
 
 # Gestion utilisateurs
 
+
 def charger_utilisateurs():
     if not os.path.exists(FICHIER):
         return {}
     with open(FICHIER, "r") as f:
         return json.load(f)
 
+
 def sauvegarder_utilisateurs(users):
     with open(FICHIER, "w") as f:
         json.dump(users, f, indent=4)
 
+
 # Routes
+
 
 # Accueil
 @app.route("/")
