@@ -91,8 +91,6 @@ cd smartsport
 python3 main.py
 ```
 
----
-
 OU
 
 ▶️ Lancer l'application
@@ -106,6 +104,8 @@ http://127.0.0.1:5000
 ⚙️ Installation des dépendances
 
 python3 -m pip install flask
+---
+
 
 ## 💡 Exemple d’utilisation
 
