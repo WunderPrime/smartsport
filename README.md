@@ -90,7 +90,7 @@ python3 main.py
 
 OU
 
-## ▶️ Lancer l'application
+## ▶️ Lancer l'application (Web version)
 ```
 python3 app.py
 ```
