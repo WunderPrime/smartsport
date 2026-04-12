@@ -93,17 +93,19 @@ python3 main.py
 
 OU
 
-▶️ Lancer l'application
-
+## ▶️ Lancer l'application
+```
 python3 app.py
-
+```
 Puis ouvrir dans le navigateur :
 
 http://127.0.0.1:5000
 
-⚙️ Installation des dépendances
-
+## ⚙️ Installation des dépendances
+```
 python3 -m pip install flask
+```
+
 ---
 
 
