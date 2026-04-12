@@ -57,7 +57,7 @@ SmartSport/
 ├── tournoi.py            # Gestion des tournois
 ├── matchs.py             # Génération et gestion des matchs
 ├── classement.py        # Classement des joueurs
-├── auth.py              # Système d’authentification (si séparé)
+├── auth.py              # Système d’authentification
 │
 ├── users.json           # Base de données des utilisateurs (auto-générée)
 │
