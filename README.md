@@ -78,7 +78,7 @@ SmartSport/
 ### 1. Cloner le projet
 
 ```
-git clone https://github.com/ton-username/smartsport.git
+git clone https://github.com/WunderPrime/smartsport.git
 cd smartsport
 ```
 
