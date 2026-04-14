@@ -1,3 +1,5 @@
+# Programme créé uniquement pour l'interface WEB
+
 from flask import Flask, render_template, request, redirect, session
 import json
 import os
@@ -7,8 +9,8 @@ app.secret_key = "secret123"
 
 FICHIER = "users.json"
 
-# Gestion utilisateurs
 
+# Gestion utilisateurs
 
 def charger_utilisateurs():
     if not os.path.exists(FICHIER):

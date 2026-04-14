@@ -1,5 +1,6 @@
 import json
 import os
+import re
 
 FICHIER = "users.json"
 
