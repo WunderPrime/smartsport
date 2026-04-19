@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>🏆 Tournois</h1>
+
+<form method="POST" action="/add_tournament">
+    <input name="name">
+    <button>Créer</button>
+</form>
+
+{% for t in tournaments %}
+<div class="card">
+    {{ t.name }}
+</div>
+{% endfor %}
+
+{% endblock %}

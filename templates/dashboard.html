@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tableau de bord</title>
-</head>
-<body>
-    <h2 align="center">Bienvenue {{ user }}</h2>
+{% extends "base.html" %}
 
-    <p align="center">Tu es connecté !</p>
+{% block content %}
 
-    <a href="/logout" align="center">Se déconnecter</a>
-</body>
-</html>
+<h1>Bienvenue {{ user }}</h1>
+
+<div class="cards">
+    <div class="card">👤 Utilisateurs</div>
+    <div class="card">🧑 Joueurs</div>
+    <div class="card">🏆 Tournois</div>
+    <div class="card">🎮 Matchs</div>
+    <div class="card">📊 Classement</div>
+</div>
+
+{% endblock %}

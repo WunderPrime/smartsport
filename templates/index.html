@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SmartSport</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-    <h1 align="center">🏆 SmartSport 🏆</h1>
-    <p align="center">Bienvenue sur l'application de gestion de tournois</p>
+<div class="card">
+    <h1>Authentification</h1>
+    <p>Gestion des joueurs, tournois et matchs</p>
 
-    <br>
-
-    <a href="/login" align="center">
-        <button align="center">Se connecter</button>
-    </a>
-
-    <br><br>
-
-    <a href="/register" align="center">
-        <button align="center">Créer un compte</button>
-    </a>
+    <a href="/login" class="btn">Login</a>
+    <a href="/register" class="btn">Register</a>
+</div>
 
 </body>
 </html>

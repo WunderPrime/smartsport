@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>📊 Classement</h1>
+
+{% for p in players %}
+<div class="card">
+    {{ p.name }} - {{ p.points }}
+</div>
+{% endfor %}
+
+{% endblock %}

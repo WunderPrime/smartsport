@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>🧑 Joueurs</h1>
+
+<form method="POST" action="/add_player">
+    <input name="name">
+    <button>Ajouter</button>
+</form>
+
+<hr>
+
+{% for p in players %}
+<div class="card">
+    {{ p.name }} - {{ p.points }} pts
+</div>
+{% endfor %}
+
+{% endblock %}

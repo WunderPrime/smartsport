@@ -1,0 +1,27 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartSport</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>SmartSport</h2>
+
+    <a href="/dashboard">🏠 Dashboard</a>
+    <a href="/players">🧑 Joueurs</a>
+    <a href="/tournaments">🏆 Tournois</a>
+    <a href="/matches">🎮 Matchs</a>
+    <a href="/ranking">📊 Classement</a>
+    <a href="/profile">👤 Profil</a>
+    <a href="/logout">🚪 Logout</a>
+</div>
+
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

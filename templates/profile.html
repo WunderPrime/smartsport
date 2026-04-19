@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>👤 Profile</h1>
+
+<div class="card">
+    <p><strong>Username :</strong> {{ user }}</p>
+
+    <hr>
+
+    <h3>Modifier username</h3>
+    <form method="POST" action="/update_profile">
+        <input name="new_username" placeholder="Nouveau username">
+        <button>Modifier</button>
+    </form>
+
+    <hr>
+
+    <h3>Supprimer compte</h3>
+    <form method="POST" action="/delete_account">
+        <button class="danger">Supprimer</button>
+    </form>
+</div>
+
+{% endblock %}

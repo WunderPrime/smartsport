@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>🎮 Matchs</h1>
+
+<form method="POST" action="/add_match">
+    <input name="team1" placeholder="Equipe 1">
+    <input name="team2" placeholder="Equipe 2">
+    <button>Créer match</button>
+</form>
+
+{% for m in matches %}
+<div class="card">
+    {{ m.team1 }} vs {{ m.team2 }} | {{ m.score1 }} - {{ m.score2 }}
+</div>
+{% endfor %}
+
+{% endblock %}
