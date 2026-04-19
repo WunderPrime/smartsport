@@ -1,5 +1,3 @@
-README
-
 # 🏆 SmartSport – Tournament Management System
 
 ## 📌 Description
