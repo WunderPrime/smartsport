@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+{% block title %}— Dashboard{% endblock %}
+{% block content %}
+<h2 class="fw-bold mb-1">Bonjour, {{ user.username }} 👋</h2>
+<p class="text-muted mb-4">Voici un aperçu de votre activité.</p>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <div style="font-size:2rem; color:#e94560;"><i class="bi bi-person-fill"></i></div>
+            <h3 class="fw-bold">{{ player_count }}</h3>
+            <p class="text-muted mb-0">Joueurs</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <div style="font-size:2rem; color:#e94560;"><i class="bi bi-clipboard2-check-fill"></i></div>
+            <h3 class="fw-bold">{{ referee_count }}</h3>
+            <p class="text-muted mb-0">Arbitres</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <div style="font-size:2rem; color:#e94560;"><i class="bi bi-flag-fill"></i></div>
+            <h3 class="fw-bold">{{ tournament_count }}</h3>
+            <p class="text-muted mb-0">Tournois</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <div style="font-size:2rem; color:#e94560;"><i class="bi bi-controller"></i></div>
+            <h3 class="fw-bold">{{ match_count }}</h3>
+            <p class="text-muted mb-0">Matchs</p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    {% if top_players %}
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-trophy-fill text-warning"></i> Top joueurs</h5>
+            <ol class="list-group list-group-numbered list-group-flush">
+                {% for p in top_players %}
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                    {{ p.name }}<span class="badge badge-points rounded-pill">{{ p.points }} pts</span>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if upcoming_matches %}
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-calendar-event text-primary"></i> Prochains matchs</h5>
+            <ul class="list-group list-group-flush">
+                {% for m in upcoming_matches %}
+                <li class="list-group-item bg-transparent px-0">
+                    <div class="fw-semibold">{{ m.player1.name }} vs {{ m.player2.name }}</div>
+                    <small class="text-muted">
+                        <i class="bi bi-clock"></i> {{ m.scheduled_at|date:"d/m/Y H:i" }}
+                        {% if m.tournament %} — {{ m.tournament.name }}{% endif %}
+                        {% if m.phase %} / {{ m.phase.name }}{% endif %}
+                    </small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

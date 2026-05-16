@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+{% block title %}— Joueurs{% endblock %}
+{% block content %}
+<h2 class="fw-bold mb-4"><i class="bi bi-person-fill text-danger"></i> Joueurs</h2>
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card p-4">
+            <h5 class="fw-bold mb-3">Ajouter un joueur</h5>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">{{ form.name }}</div>
+                <button type="submit" class="btn btn-danger w-100">Ajouter</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <table class="table table-hover mb-0">
+                <thead class="table-light"><tr><th>#</th><th>Nom</th><th>Points</th><th></th></tr></thead>
+                <tbody>
+                {% for p in players %}
+                <tr>
+                    <td class="text-muted">{{ forloop.counter }}</td>
+                    <td class="fw-semibold">{{ p.name }}</td>
+                    <td><span class="badge badge-points">{{ p.points }} pts</span></td>
+                    <td><a href="{% url 'delete_player' p.pk %}" onclick="return confirm('Supprimer ?')" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a></td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="4" class="text-center text-muted py-4">Aucun joueur pour l'instant.</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

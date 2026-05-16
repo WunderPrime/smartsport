@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+{% block title %}— Accueil{% endblock %}
+{% block content %}
+<div class="row min-vh-100 align-items-center justify-content-center">
+    <div class="col-md-6 text-center">
+        <h1 style="font-size:3rem; font-weight:800; color:#1a1a2e;"><span style="color:#e94560;">Smart</span>Sport</h1>
+        <p class="lead text-muted mb-4">Gérez vos tournois, joueurs et matchs. Tout en un.</p>
+        <a href="{% url 'login' %}" class="btn btn-danger btn-lg me-2">Se connecter</a>
+        <a href="{% url 'register' %}" class="btn btn-outline-dark btn-lg">Créer un compte</a>
+    </div>
+</div>
+{% endblock %}

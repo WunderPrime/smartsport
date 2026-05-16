@@ -1,0 +1,92 @@
+{% extends "core/base.html" %}
+{% block title %}— Profil{% endblock %}
+{% block content %}
+<h2 class="fw-bold mb-4"><i class="bi bi-gear-fill text-danger"></i> Mon profil</h2>
+
+<div class="row g-4">
+
+    <!-- Infos compte -->
+    <div class="col-md-4">
+        <div class="card p-4 text-center">
+            <div style="font-size:4rem; color:#e94560;"><i class="bi bi-person-circle"></i></div>
+            <h4 class="fw-bold mt-2">{{ user.username }}</h4>
+            <p class="text-muted mb-1">Membre depuis le {{ user.date_joined|date:"d/m/Y" }}</p>
+            <hr>
+            <div class="d-flex justify-content-around text-center">
+                <div>
+                    <div class="fw-bold fs-5">{{ user.players.count }}</div>
+                    <div class="text-muted small">Joueurs</div>
+                </div>
+                <div>
+                    <div class="fw-bold fs-5">{{ user.tournaments.count }}</div>
+                    <div class="text-muted small">Tournois</div>
+                </div>
+                <div>
+                    <div class="fw-bold fs-5">{{ user.matches.count }}</div>
+                    <div class="text-muted small">Matchs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+
+        <!-- Changer username -->
+        <div class="card p-4 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-person-fill"></i> Changer le nom d'utilisateur</h5>
+            <form method="post" action="{% url 'change_username' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Nouveau nom d'utilisateur</label>
+                    <input type="text" name="username" class="form-control" value="{{ user.username }}" required>
+                </div>
+                <button type="submit" class="btn btn-danger">Modifier</button>
+            </form>
+        </div>
+
+        <!-- Changer mot de passe -->
+        <div class="card p-4 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-lock-fill"></i> Changer le mot de passe</h5>
+            <form method="post" action="{% url 'change_password' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Mot de passe actuel</label>
+                    <input type="password" name="current_password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Nouveau mot de passe</label>
+                    <input type="password" name="new_password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Confirmer le nouveau mot de passe</label>
+                    <input type="password" name="confirm_password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-danger">Modifier</button>
+            </form>
+        </div>
+
+        <!-- Supprimer compte -->
+        <div class="card p-4 border border-danger">
+            <h5 class="fw-bold mb-1 text-danger"><i class="bi bi-trash-fill"></i> Supprimer le compte</h5>
+            <p class="text-muted small mb-3">Cette action est irréversible. Tous tes joueurs, tournois et matchs seront supprimés.</p>
+            <button class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#deleteForm">
+                Supprimer mon compte
+            </button>
+            <div class="collapse mt-3" id="deleteForm">
+                <form method="post" action="{% url 'delete_account' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Confirme ton mot de passe</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('Es-tu sûr ? Cette action est irréversible.')">
+                        Confirmer la suppression
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

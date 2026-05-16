@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% block title %}— Classement{% endblock %}
+{% block content %}
+<h2 class="fw-bold mb-4"><i class="bi bi-bar-chart-fill text-danger"></i> Classement</h2>
+<div class="card">
+    <table class="table table-hover mb-0">
+        <thead class="table-light"><tr><th>Rang</th><th>Joueur</th><th>Points</th></tr></thead>
+        <tbody>
+        {% for p in players %}
+        <tr {% if forloop.counter == 1 %}style="background:#fff8e1;"{% endif %}>
+            <td>{% if forloop.counter == 1 %}🥇{% elif forloop.counter == 2 %}🥈{% elif forloop.counter == 3 %}🥉{% else %}<span class="text-muted">{{ forloop.counter }}</span>{% endif %}</td>
+            <td class="fw-semibold">{{ p.name }}</td>
+            <td><span class="badge badge-points fs-6">{{ p.points }} pts</span></td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3" class="text-center text-muted py-4">Aucun joueur encore classé.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
