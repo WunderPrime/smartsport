@@ -12,22 +12,22 @@
 ## 📸 Aperçu
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.PNG)
 
 ### Gestion des joueurs
-![Joueurs](screenshots/players.png)
+![Joueurs](screenshots/players.PNG)
 
 ### Tournois & Phases
-![Tournois](screenshots/tournament_detail.png)
+![Tournois](screenshots/tournament_detail.PNG)
 
 ### Arbitres
-![Arbitres](screenshots/referees.png)
+![Arbitres](screenshots/referees.PNG)
 
 ### Matchs
-![Matchs](screenshots/matches.png)
+![Matchs](screenshots/matches.PNG)
 
 ### Classement
-![Classement](screenshots/ranking.png)
+![Classement](screenshots/ranking.PNG)
 
 ---
 
