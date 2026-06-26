@@ -275,3 +275,4 @@ def delete_account(request):
         else:
             messages.error(request, "Mot de passe incorrect.")
     return redirect("profile")
+ 
